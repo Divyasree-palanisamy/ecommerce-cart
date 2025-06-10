@@ -1,0 +1,205 @@
+/* Universal box-sizing for consistent layout - KEEPING THIS AS IT'S GOOD PRACTICE */
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    overflow-x: hidden;
+    /* Prevent horizontal scrolling on the entire page - KEEPING */
+    box-sizing: border-box;
+    /* Include padding and border in the element's total width and height - KEEPING */
+    max-width: 100vw;
+    /* Ensure content does not exceed viewport width - KEEPING */
+    margin: 0;
+    /* Remove default body margin - KEEPING */
+    padding: 0;
+    /* Remove default body padding - KEEPING */
+}
+
+.about-page {
+    background: #f8f8f8;
+    /* Light background for the whole page - KEEPING */
+    padding-top: 4rem;
+    /* KEEPING */
+    padding-bottom: 4rem;
+    /* KEEPING */
+    overflow-x: hidden;
+    /* Crucial for preventing horizontal scrolling - KEEPING */
+    width: 100%;
+    /* Ensure the page doesn't exceed viewport width - KEEPING */
+}
+
+/* --- YOUR ORIGINAL CSS (as provided in your prompt) --- */
+
+.hero-section {
+    border-radius: 12px;
+    padding: 0;
+    margin-bottom: 4px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    position: relative;
+    z-index: 0;
+    height: 450px;
+    overflow: hidden;
+    width: 100%;
+}
+
+.hero-section h1 {
+    margin-bottom: 1rem;
+    display: none;
+}
+
+.hero-section h5 {
+    display: none;
+}
+
+.stats-section .MuiPaper-root {
+    border-radius: 12px;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.stats-section .MuiPaper-root:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.features-section .MuiBox-root {
+    background: white;
+    border-radius: 12px;
+    padding: 2.5rem;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease-in-out;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.features-section .MuiBox-root:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.team-card {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease-in-out;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.team-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.team-card .MuiCardMedia-root {
+    object-fit: cover;
+    height: 250px;
+}
+
+.team-card .MuiCardContent-root {
+    background: #fdfdfd;
+}
+
+.values-section .MuiPaper-root {
+    background: linear-gradient(135deg, #e0f2f7, #bbdefb);
+    border-radius: 12px;
+    padding: 3rem;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.values-section .MuiListItem-root {
+    padding: 10px 0;
+}
+
+.values-section .MuiListItemIcon-root {
+    min-width: 40px;
+}
+
+.values-section .MuiTypography-root {
+    font-weight: 500;
+}
+
+.vision-mission-section {
+    background: #f0f4f8;
+    border-radius: 12px;
+    padding: 3rem;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+    margin-bottom: 3rem;
+}
+
+.vision-mission-section h4 {
+    color: #1976d2;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.vision-mission-section p {
+    color: #555;
+    line-height: 1.8;
+}
+
+.milestones-section {
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+}
+
+.milestones-section .MuiTimelineItem-root {
+    min-height: 120px;
+}
+
+.milestones-section .MuiTimelineOppositeContent-root {
+    flex: 0;
+    padding: 0;
+}
+
+.milestones-section .MuiTimelineSeparator-root {
+    flex-direction: column;
+    justify-content: center;
+}
+
+.milestones-section .MuiTimelineConnector-root {
+    height: 80px;
+    background-color: #bbdefb;
+}
+
+.milestones-section .MuiTimelineDot-root {
+    padding: 8px;
+    border-radius: 50%;
+    border: 2px solid #1976d2;
+    box-shadow: 0 0 0 4px rgba(25, 118, 210, 0.2);
+}
+
+.milestone-card {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease-in-out;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.milestone-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.12);
+}
+
+.milestone-card h6 {
+    font-size: 1.2rem;
+    color: #1976d2;
+    margin-bottom: 0.5rem;
+}
+
+.milestone-card h5 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 0.75rem;
+}
+
+.milestone-card img {
+    margin-top: 1rem;
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}

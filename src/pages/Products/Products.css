@@ -1,0 +1,425 @@
+.products-container {
+    padding: 2rem 0;
+    min-height: 100vh;
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(10px);
+}
+
+/* Filters Section */
+.filters-section {
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 20px;
+    padding: 2rem;
+    margin-bottom: 2.5rem;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+    backdrop-filter: blur(20px);
+}
+
+/* Input Fields Styling */
+.filters-section .MuiFormControl-root {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 12px;
+    margin-bottom: 1rem;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.filters-section .MuiOutlinedInput-root {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 12px;
+}
+
+/* Label Styling */
+.filters-section .MuiInputLabel-root {
+    color: #000000 !important;
+    background: white !important;
+    padding: 0 8px !important;
+    font-weight: 500;
+    z-index: 1;
+    transform: translate(14px, -9px) scale(0.75) !important;
+}
+
+.filters-section .MuiInputLabel-root.Mui-focused {
+    color: #1976d2 !important;
+    background: white !important;
+    transform: translate(14px, -9px) scale(0.75) !important;
+}
+
+.filters-section .MuiInputLabel-shrink {
+    transform: translate(14px, -9px) scale(0.75) !important;
+    background: white !important;
+}
+
+/* Input Text Styling */
+.filters-section .MuiOutlinedInput-input {
+    color: #000000 !important;
+    font-weight: 500;
+}
+
+/* Select Styling */
+.filters-section .MuiSelect-select {
+    color: #000000 !important;
+    font-weight: 500;
+    background: transparent !important;
+    padding: 14px !important;
+}
+
+.filters-section .MuiOutlinedInput-notchedOutline {
+    border-color: rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Menu Items */
+.filters-section .MuiMenu-paper {
+    background: white !important;
+    margin-top: 4px !important;
+    border-radius: 12px !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15) !important;
+}
+
+.filters-section .MuiMenuItem-root {
+    color: #000000 !important;
+    font-weight: 500;
+    padding: 12px 16px !important;
+}
+
+.filters-section .MuiMenuItem-root:hover {
+    background-color: rgba(25, 118, 210, 0.08) !important;
+}
+
+.filters-section .MuiMenuItem-root.Mui-selected {
+    background-color: rgba(25, 118, 210, 0.15) !important;
+}
+
+.filters-section .MuiSelect-icon {
+    color: #000000 !important;
+    right: 12px !important;
+}
+
+/* Empty Select Text */
+.filters-section .MuiSelect-select em {
+    color: rgba(0, 0, 0, 0.6) !important;
+    font-style: normal;
+    font-weight: 400;
+}
+
+/* Typography */
+.filters-section .MuiTypography-root {
+    color: #000000 !important;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    font-size: 1rem;
+}
+
+/* Price Range Text */
+.filters-section .MuiSlider-markLabel {
+    color: #000000 !important;
+    font-weight: 500;
+}
+
+.filters-section .MuiSlider-valueLabel {
+    background-color: #1976d2;
+    color: #ffffff !important;
+    padding: 4px 8px;
+    font-weight: 600;
+}
+
+/* Slider Styling */
+.filters-section .MuiSlider-root {
+    color: #1976d2;
+    height: 8px;
+}
+
+.filters-section .MuiSlider-thumb {
+    width: 16px;
+    height: 16px;
+    background-color: #fff;
+    border: 2px solid currentColor;
+}
+
+/* Active/Selected State */
+.filters-section .MuiOutlinedInput-root.Mui-focused {
+    background: #ffffff;
+}
+
+.filters-section .MuiSelect-select.Mui-selected {
+    background-color: rgba(25, 118, 210, 0.08);
+}
+
+/* Product Grid */
+.products-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 2rem !important;
+    padding: 0 2rem !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+}
+
+.product-item {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    height: 380px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    position: relative;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+}
+
+.product-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.product-image-container {
+    position: relative;
+    width: 100%;
+    height: 60%;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.product-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.product-item:hover .product-image {
+    transform: scale(1.05);
+}
+
+.product-details {
+    padding: 1rem;
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    background: white;
+}
+
+.product-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 0;
+}
+
+.product-name {
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+    color: #000000 !important;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    line-height: 1.4 !important;
+    margin-bottom: 0.25rem !important;
+}
+
+.product-description {
+    color: #666666 !important;
+    font-size: 0.8rem !important;
+    line-height: 1.3 !important;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin-bottom: 0.5rem !important;
+}
+
+.product-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0.5rem 0;
+    background: rgba(25, 118, 210, 0.05);
+    padding: 0.5rem;
+    border-radius: 8px;
+}
+
+.product-price {
+    font-size: 1.25rem !important;
+    font-weight: 700 !important;
+    color: #1976d2 !important;
+    margin: 0.5rem 0;
+    background: rgba(25, 118, 210, 0.05);
+    padding: 0.5rem;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.product-rating {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(25, 118, 210, 0.08);
+    padding: 0.15rem 0.5rem;
+    border-radius: 6px;
+    margin: 0.25rem 0;
+    height: 28px;
+}
+
+.rating-value {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #1976d2 !important;
+    line-height: 1;
+}
+
+.product-rating .MuiRating-root {
+    color: #ffc107;
+    font-size: 1.1rem;
+}
+
+.product-rating .MuiRating-iconFilled {
+    color: #ffc107;
+}
+
+.product-rating .MuiRating-iconHover {
+    color: #ffc107;
+}
+
+.product-tags {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.product-item button {
+    color: black !important;
+}
+
+.product-item .MuiButton-contained {
+    color: white !important;
+}
+
+.product-tags .MuiChip-root {
+    background: rgba(25, 118, 210, 0.08);
+    color: #1976d2 !important;
+    font-weight: 500;
+    height: 24px;
+    font-size: 0.75rem;
+}
+
+.product-stock {
+    font-size: 0.8rem !important;
+    font-weight: 500 !important;
+    margin: 0.25rem 0;
+}
+
+.product-stock.low {
+    color: #f57c00 !important;
+}
+
+.product-stock.out {
+    color: #d32f2f !important;
+}
+
+.wishlist-button {
+    position: absolute !important;
+    top: 12px;
+    right: 12px;
+    background-color: rgba(255, 255, 255, 0.95) !important;
+    padding: 8px !important;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+    z-index: 2;
+    border-radius: 50%;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.wishlist-button svg {
+    color: black !important;
+    font-size: 1.5rem;
+}
+
+.wishlist-button.active {
+    background-color: white !important;
+    transform: scale(1.1);
+}
+
+.wishlist-button.active svg {
+    color: #f50057 !important;
+}
+
+.wishlist-button:hover {
+    background-color: white !important;
+    transform: scale(1.15);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.wishlist-button:hover svg {
+    color: #f50057 !important;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .products-grid {
+        gap: 1.5rem !important;
+        padding: 0 1.5rem !important;
+    }
+}
+
+@media (max-width: 960px) {
+    .products-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 1.25rem !important;
+        padding: 0 1rem !important;
+    }
+
+    .product-item {
+        height: 360px;
+    }
+}
+
+@media (max-width: 600px) {
+    .products-container {
+        padding: 1rem;
+    }
+
+    .products-grid {
+        grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
+        gap: 1rem !important;
+        padding: 0 0.5rem !important;
+    }
+
+    .product-item {
+        height: 340px;
+    }
+}
+
+/* Loading Animation */
+@keyframes shimmer {
+    0% {
+        background-position: -200% 0;
+    }
+
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+.loading-skeleton {
+    background: linear-gradient(90deg,
+            rgba(255, 255, 255, 0.1) 25%,
+            rgba(255, 255, 255, 0.2) 37%,
+            rgba(255, 255, 255, 0.1) 63%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+    border-radius: 4px;
+}
+
+.loading-item {
+    opacity: 0.7;
+    pointer-events: none;
+}

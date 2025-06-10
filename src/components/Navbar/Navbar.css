@@ -1,0 +1,96 @@
+.navbar {
+    background: rgba(255, 255, 255, 0.1) !important;
+    backdrop-filter: blur(10px) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: none !important;
+}
+
+.logo {
+    color: black !important;
+    text-decoration: none !important;
+    font-weight: 700 !important;
+    letter-spacing: 1px !important;
+    flex-grow: 0;
+    margin-right: 6rem !important;
+    font-size: 2rem !important;
+    min-width: 180px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 3rem !important;
+    flex-grow: 1;
+    justify-content: center;
+}
+
+.nav-link {
+    position: relative;
+    text-transform: none !important;
+    font-weight: 500 !important;
+    color: black !important;
+    padding: 6px 12px !important;
+    font-size: 1.1rem !important;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #fff;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+    transform-origin: center;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    transform: scaleX(1);
+}
+
+.nav-actions {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.nav-actions .MuiIconButton-root {
+    color: black !important;
+    transition: transform 0.2s ease;
+}
+
+.nav-actions .MuiIconButton-root:hover {
+    transform: scale(1.1);
+}
+
+.mobile-menu .MuiPaper-root {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.mobile-menu .MuiMenuItem-root {
+    color: black;
+}
+
+.menu-button {
+    margin-right: 1rem !important;
+    color: black !important;
+}
+
+/* Add some spacing to account for the fixed navbar */
+body {
+    padding-top: 64px;
+}
+
+@media (max-width: 600px) {
+    body {
+        padding-top: 56px;
+    }
+
+    .mobile-menu .MuiDrawer-paper {
+        width: 260px;
+    }
+}
