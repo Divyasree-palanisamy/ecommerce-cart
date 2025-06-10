@@ -7,7 +7,6 @@ A modern e-commerce frontend built with React and Material-UI, featuring a respo
 - 🛍️ Product browsing and searching
 - 🛒 Shopping cart functionality
 - ❤️ Wishlist management
-- 👤 User authentication
 - 📱 Responsive design
 - ✨ Smooth animations
 - 📧 Newsletter subscription
@@ -32,17 +31,20 @@ A modern e-commerce frontend built with React and Material-UI, featuring a respo
 ### Installation
 
 1. Clone the repository:
+
 ```bash
 git clone https://github.com/yourusername/ecommerce-cart.git
 cd ecommerce-cart
 ```
 
 2. Install dependencies:
+
 ```bash
 npm install
 ```
 
 3. Start the development server:
+
 ```bash
 npm start
 ```
@@ -93,4 +95,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - [Material-UI](https://mui.com/)
 - [React Router](https://reactrouter.com/)
 - [Framer Motion](https://www.framer.com/motion/)
-- [React Toastify](https://fkhadra.github.io/react-toastify/) 
+- [React Toastify](https://fkhadra.github.io/react-toastify/)
