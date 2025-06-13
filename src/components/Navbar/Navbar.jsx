@@ -20,6 +20,7 @@ import {
     Favorite,
     Menu as MenuIcon,
     Search,
+    Storefront,
 } from '@mui/icons-material';
 import { Link, useNavigate } from 'react-router-dom';
 import { useCart } from '../../contexts/CartContext'; // Verify this path
@@ -81,7 +82,9 @@ const Navbar = () => {
                         component={Link}
                         to="/"
                         className="logo"
+                        sx={{ display: 'flex', alignItems: 'center', gap: 1 }}
                     >
+                        <Storefront sx={{ fontSize: '2rem' }} />
                         TechShop
                     </Typography>
 

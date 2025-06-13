@@ -9,17 +9,20 @@ const HeroSection = () => {
 
     return (
         <Box className="hero-section">
-            <video autoPlay muted loop className="hero-background-video">
-                <source src="/videos/hero-bg.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-            </video>
-            <div className="hero-overlay" />
+            <div className="hero-background">
+                <video autoPlay muted loop className="hero-background-video">
+                    <source src="/videos/hero-bg.mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
+                </video>
+                <div className="hero-overlay" />
+                <div className="hero-gradient" />
+            </div>
             <Container maxWidth="xl" className="hero-content">
                 <Typography variant="h1" className="hero-title">
-                    Discover Amazing Products
+                    Discover Amazing Tech
                 </Typography>
                 <Typography variant="h5" className="hero-subtitle">
-                    Shop the latest trends with unbeatable prices
+                    Experience Innovation at Your Fingertips
                 </Typography>
                 <Button
                     variant="contained"

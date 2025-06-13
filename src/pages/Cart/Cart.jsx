@@ -7,7 +7,6 @@ import { ShoppingCartIcon, RemoveIcon, AddIcon, DeleteIcon } from '../../icons';
 
 const Cart = () => {
     const { cart, removeFromCart, updateQuantity, getCartTotal, clearCart } = useCart();
-
     const containerVariants = {
         hidden: { opacity: 0 },
         visible: {
@@ -61,7 +60,7 @@ const Cart = () => {
                             Your Cart is Empty
                         </Typography>
                         <Typography variant="body1" paragraph>
-                            Looks like you haven't added anything to your cart yet.
+                            Looks like you haven't added anything to your cart yet.Add it soon to grab offers!!!
                         </Typography>
                         <Button
                             variant="contained"
