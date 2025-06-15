@@ -93,7 +93,7 @@ const Deals = () => {
     return (
         <Container maxWidth="lg" sx={{ py: 4 }} className="deals-page">
             <Typography variant="h3" component="h1" gutterBottom align="center" sx={{ mb: 4, color: '#000000' }}>
-                🎉 Special Deals
+                🎉 Super Dooper Special Deals
             </Typography>
             <Grid container spacing={3}>
                 {deals.map((deal) => (
