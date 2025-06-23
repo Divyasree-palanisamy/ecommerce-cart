@@ -306,7 +306,8 @@ const Cart = () => {
                     boxShadow: 12,
                     borderRadius: 3,
                     p: 4,
-                    zIndex: 2000
+                    zIndex: 2000,
+                    color: '#000',
                 }}>
                     <Typography id="payment-modal-title" variant="h6" component="h2" gutterBottom>
                         Payment Method
@@ -355,6 +356,9 @@ const Cart = () => {
                                 margin="normal"
                                 value={paymentDetails.name}
                                 onChange={e => setPaymentDetails({ ...paymentDetails, name: e.target.value })}
+                                InputLabelProps={{ style: { color: '#000' } }}
+                                InputProps={{ style: { color: '#000', background: '#fff', border: '1px solid #1976d2', borderRadius: 4 } }}
+                                sx={{ mb: 2 }}
                             />
                             <TextField
                                 label="Card Number"
@@ -362,12 +366,15 @@ const Cart = () => {
                                 margin="normal"
                                 value={paymentDetails.card}
                                 onChange={e => setPaymentDetails({ ...paymentDetails, card: e.target.value })}
+                                InputLabelProps={{ style: { color: '#000' } }}
+                                InputProps={{ style: { color: '#000', background: '#fff', border: '1px solid #1976d2', borderRadius: 4 } }}
+                                sx={{ mb: 2 }}
                             />
                             <Button
                                 variant="contained"
                                 color="primary"
                                 fullWidth
-                                sx={{ mt: 2 }}
+                                sx={{ mt: 2, color: '#000', background: 'linear-gradient(45deg, #1976d2, #21cbf3)' }}
                                 onClick={handlePlaceOrder}
                                 disabled={!paymentDetails.name || !paymentDetails.card}
                             >

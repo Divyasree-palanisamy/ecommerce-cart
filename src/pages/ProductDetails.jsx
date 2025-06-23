@@ -3,20 +3,6 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { Container, Typography, Box, Grid, Button } from '@mui/material';
 import { ShoppingCart, Favorite } from '@mui/icons-material';
 
-// Import product images
-import laptop1 from '../assets/images/products/laptop1.jpeg';
-import laptop2 from '../assets/images/products/laptop2.jpeg';
-import phone1 from '../assets/images/products/phone1.jpeg';
-import phone2 from '../assets/images/products/phone2.jpeg';
-import smartwatch1 from '../assets/images/products/smartwatch1.jpeg';
-import smartwatch2 from '../assets/images/products/smartwatch2.jpeg';
-import headphones1 from '../assets/images/products/headphones1.jpeg';
-import headphones2 from '../assets/images/products/headphones2.jpeg';
-import tablet1 from '../assets/images/products/tablet1.jpeg';
-import tablet2 from '../assets/images/products/tablet2.jpeg';
-import camera1 from '../assets/images/products/camera1.jpeg';
-import camera2 from '../assets/images/products/camera2.jpeg';
-
 // Product data
 const productsData = [
     { id: 1, name: 'Premium Gaming Laptop 1', price: 999.99, image: laptop1, category: 'Laptops', brand: 'Asus', stock: 10 },

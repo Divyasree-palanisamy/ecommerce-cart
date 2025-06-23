@@ -26,7 +26,7 @@ import {
 } from '@mui/icons-material';
 import { useCart } from '../../contexts/CartContext';
 import { useWishlist } from '../../contexts/WishlistContext';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import './Products.css';
 
 // Import available product images
