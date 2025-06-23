@@ -1,12 +1,17 @@
 import React, { useEffect } from 'react';
 import { useCart } from '../../contexts/CartContext';
-import { Container, Box, Grid, Card, CardMedia, CardContent, Typography, IconButton, Button, Paper, Divider } from '@mui/material';
+import { Container, Box, Grid, Card, CardMedia, CardContent, Typography, IconButton, Button, Paper, Divider, Modal, TextField, Alert } from '@mui/material';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ShoppingCartIcon, RemoveIcon, AddIcon, DeleteIcon } from '../../icons';
+import { ShoppingCart, Remove, Add, Delete } from '@mui/icons-material';
 
 const Cart = () => {
     const { cart, removeFromCart, updateQuantity, getCartTotal, clearCart } = useCart();
+    const [openPayment, setOpenPayment] = React.useState(false);
+    const [orderPlaced, setOrderPlaced] = React.useState(false);
+    const [paymentMethod, setPaymentMethod] = React.useState('');
+    const [paymentDetails, setPaymentDetails] = React.useState({ name: '', card: '' });
+
     const containerVariants = {
         hidden: { opacity: 0 },
         visible: {
@@ -39,6 +44,17 @@ const Cart = () => {
         removeFromCart(productId, true);
     };
 
+    const handlePlaceOrder = () => {
+        setOrderPlaced(true);
+        clearCart();
+        setOpenPayment(false);
+        setTimeout(() => setOrderPlaced(false), 4000);
+    };
+
+    useEffect(() => {
+        console.log('paymentMethod:', paymentMethod);
+    }, [paymentMethod]);
+
     if (cart.length === 0) {
         return (
             <Container maxWidth="md" className="empty-cart-container">
@@ -55,7 +71,7 @@ const Cart = () => {
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 0.5 }}
                     >
-                        <ShoppingCartIcon sx={{ fontSize: 100, mb: 2 }} />
+                        <ShoppingCart sx={{ fontSize: 100, mb: 2 }} />
                         <Typography variant="h4" gutterBottom>
                             Your Cart is Empty
                         </Typography>
@@ -68,37 +84,41 @@ const Cart = () => {
                             size="large"
                             component={Link}
                             to="/products"
-                            startIcon={<ShoppingCartIcon />}
+                            startIcon={<ShoppingCart />}
                             className="continue-shopping"
                         >
                             Start Shopping
                         </Button>
                     </motion.div>
                 </Box>
+                {orderPlaced && (
+                    <Alert severity="success" sx={{ mb: 2 }}>
+                        Your order has been placed successfully!
+                    </Alert>
+                )}
             </Container>
         );
     }
 
     return (
         <Container maxWidth="lg" className="cart-page">
+            {orderPlaced && (
+                <Alert severity="success" sx={{ mb: 2 }}>
+                    Your order has been placed successfully!
+                </Alert>
+            )}
             <motion.div
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
             >
                 <Typography
-                    variant="h4"
+                    variant="h3"
                     component="h1"
                     gutterBottom
+                    align="center"
                     className="page-title"
-                    sx={{
-                        background: 'linear-gradient(45deg, #1976d2 30%, #2196f3 90%)',
-                        WebkitBackgroundClip: 'text',
-                        WebkitTextFillColor: 'transparent',
-                        textShadow: '2px 2px 4px rgba(0, 0, 0, 0.3) !important',
-                        fontWeight: 700,
-                        fontSize: { xs: '2.5rem', sm: '3rem', md: '3.5rem' },
-                    }}
+                    sx={{ color: '#000', fontWeight: 400, mt: 4 }}
                 >
                     Shopping Cart
                 </Typography>
@@ -118,10 +138,10 @@ const Cart = () => {
                                         <Grid item xs={12} sm={4}>
                                             <CardMedia
                                                 component="img"
-                                                height="140"
                                                 image={item.image}
                                                 alt={item.name}
                                                 className="cart-item-image"
+                                                sx={{ height: 170, width: '100%', objectFit: 'cover', borderRadius: 2, background: '#f5f5f5', p: 1 }}
                                             />
                                         </Grid>
                                         <Grid item xs={12} sm={8}>
@@ -150,7 +170,7 @@ const Cart = () => {
                                                     <IconButton
                                                         onClick={() => handleRemoveItem(item.id)}
                                                     >
-                                                        <DeleteIcon />
+                                                        <Delete />
                                                     </IconButton>
                                                 </Box>
                                                 <Box
@@ -161,7 +181,7 @@ const Cart = () => {
                                                     <IconButton
                                                         onClick={() => handleQuantityChange(item.id, item.quantity, -1)}
                                                     >
-                                                        <RemoveIcon />
+                                                        <Remove />
                                                     </IconButton>
                                                     <Typography
                                                         className="quantity-number"
@@ -173,7 +193,7 @@ const Cart = () => {
                                                     <IconButton
                                                         onClick={() => handleQuantityChange(item.id, item.quantity, 1)}
                                                     >
-                                                        <AddIcon />
+                                                        <Add />
                                                     </IconButton>
                                                 </Box>
                                                 <Typography
@@ -197,7 +217,7 @@ const Cart = () => {
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.5 }}
                     >
-                        <Paper className="cart-summary" sx={{ background: 'rgba(255, 255, 255, 0.95) !important' }}>
+                        <Paper className="cart-summary" sx={{ boxShadow: 6, borderRadius: 3, p: 3, background: 'rgba(255,255,255,0.98)' }}>
                             <Typography variant="h6" gutterBottom sx={{ color: '#000000', fontWeight: 600 }}>
                                 Order Summary
                             </Typography>
@@ -231,6 +251,11 @@ const Cart = () => {
                                         background: 'linear-gradient(45deg, #1565c0, #1976d2) !important',
                                     }
                                 }}
+                                onClick={() => {
+                                    setOpenPayment(true);
+                                    setPaymentMethod('');
+                                    setPaymentDetails({ name: '', card: '' });
+                                }}
                             >
                                 Proceed to Checkout
                             </Button>
@@ -260,6 +285,98 @@ const Cart = () => {
                     </motion.div>
                 </Grid>
             </Grid>
+            <Modal
+                open={openPayment}
+                onClose={() => {
+                    setOpenPayment(false);
+                    setPaymentMethod('');
+                    setPaymentDetails({ name: '', card: '' });
+                }}
+                aria-labelledby="payment-modal-title"
+                aria-describedby="payment-modal-description"
+            >
+                <Box sx={{
+                    position: 'absolute',
+                    top: '50%',
+                    left: '50%',
+                    transform: 'translate(-50%, -50%)',
+                    width: 370,
+                    bgcolor: '#fff',
+                    border: '2px solid #1976d2',
+                    boxShadow: 12,
+                    borderRadius: 3,
+                    p: 4,
+                    zIndex: 2000
+                }}>
+                    <Typography id="payment-modal-title" variant="h6" component="h2" gutterBottom>
+                        Payment Method
+                    </Typography>
+                    {!paymentMethod && (
+                        <Box>
+                            <Button
+                                variant="outlined"
+                                color="primary"
+                                fullWidth
+                                sx={{ mb: 2 }}
+                                onClick={() => setPaymentMethod('cod')}
+                            >
+                                Cash on Delivery
+                            </Button>
+                            <Button
+                                variant="outlined"
+                                color="secondary"
+                                fullWidth
+                                onClick={() => setPaymentMethod('online')}
+                            >
+                                Online Payment
+                            </Button>
+                        </Box>
+                    )}
+                    {paymentMethod === 'cod' && (
+                        <Box>
+                            <Typography sx={{ mt: 2, mb: 2 }}>
+                                You have selected <b>Cash on Delivery</b>.
+                            </Typography>
+                            <Button
+                                variant="contained"
+                                color="primary"
+                                fullWidth
+                                onClick={handlePlaceOrder}
+                            >
+                                Place Order
+                            </Button>
+                        </Box>
+                    )}
+                    {paymentMethod === 'online' && (
+                        <Box>
+                            <TextField
+                                label="Name on Card"
+                                fullWidth
+                                margin="normal"
+                                value={paymentDetails.name}
+                                onChange={e => setPaymentDetails({ ...paymentDetails, name: e.target.value })}
+                            />
+                            <TextField
+                                label="Card Number"
+                                fullWidth
+                                margin="normal"
+                                value={paymentDetails.card}
+                                onChange={e => setPaymentDetails({ ...paymentDetails, card: e.target.value })}
+                            />
+                            <Button
+                                variant="contained"
+                                color="primary"
+                                fullWidth
+                                sx={{ mt: 2 }}
+                                onClick={handlePlaceOrder}
+                                disabled={!paymentDetails.name || !paymentDetails.card}
+                            >
+                                Pay & Place Order
+                            </Button>
+                        </Box>
+                    )}
+                </Box>
+            </Modal>
         </Container>
     );
 };

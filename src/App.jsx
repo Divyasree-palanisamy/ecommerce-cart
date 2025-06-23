@@ -9,7 +9,7 @@ import Footer from './components/Footer/Footer';
 import Home from './pages/Home/Home';
 import Products from './pages/Products/Products';
 import ProductDetails from './pages/ProductDetails/ProductDetails';
-import Cart from './pages/Cart';
+import Cart from './pages/Cart/Cart';
 import Wishlist from './pages/Wishlist';
 import Login from './pages/Login';
 import Register from './pages/Register';
