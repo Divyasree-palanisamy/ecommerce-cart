@@ -92,8 +92,8 @@ const Cart = () => {
                     </motion.div>
                 </Box>
                 {orderPlaced && (
-                    <Alert severity="success" sx={{ mb: 2 }}>
-                        Your order has been placed successfully!
+                    <Alert severity="success" sx={{ mb: 2, color: '#1976d2', background: '#e3f2fd', fontWeight: 600 }}>
+                        Order placed! Your order will be delivered soon.
                     </Alert>
                 )}
             </Container>
@@ -103,8 +103,8 @@ const Cart = () => {
     return (
         <Container maxWidth="lg" className="cart-page">
             {orderPlaced && (
-                <Alert severity="success" sx={{ mb: 2 }}>
-                    Your order has been placed successfully!
+                <Alert severity="success" sx={{ mb: 2, color: '#1976d2', background: '#e3f2fd', fontWeight: 600 }}>
+                    Order placed! Your order will be delivered soon.
                 </Alert>
             )}
             <motion.div
@@ -351,24 +351,24 @@ const Cart = () => {
                     {paymentMethod === 'online' && (
                         <Box>
                             <TextField
-                                label="Name on Card"
+                                label={<span style={{ color: '#000' }}>Name on Card</span>}
                                 fullWidth
                                 margin="normal"
                                 value={paymentDetails.name}
                                 onChange={e => setPaymentDetails({ ...paymentDetails, name: e.target.value })}
                                 InputLabelProps={{ style: { color: '#000' } }}
                                 InputProps={{ style: { color: '#000', background: '#fff', border: '1px solid #1976d2', borderRadius: 4 } }}
-                                sx={{ mb: 2 }}
+                                sx={{ mb: 2, input: { color: '#000 !important' } }}
                             />
                             <TextField
-                                label="Card Number"
+                                label={<span style={{ color: '#000' }}>Card Number</span>}
                                 fullWidth
                                 margin="normal"
                                 value={paymentDetails.card}
                                 onChange={e => setPaymentDetails({ ...paymentDetails, card: e.target.value })}
                                 InputLabelProps={{ style: { color: '#000' } }}
                                 InputProps={{ style: { color: '#000', background: '#fff', border: '1px solid #1976d2', borderRadius: 4 } }}
-                                sx={{ mb: 2 }}
+                                sx={{ mb: 2, input: { color: '#000 !important' } }}
                             />
                             <Button
                                 variant="contained"

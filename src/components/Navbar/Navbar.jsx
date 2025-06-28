@@ -1,6 +1,6 @@
 // components/Navbar/Navbar.js
 
-import React, { useState, useMemo } from 'react';
+import React, { useState } from 'react';
 import {
     AppBar,
     Toolbar,

@@ -1,6 +1,5 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import { toast } from 'react-toastify';
-import { useNavigate } from 'react-router-dom';
 
 const WishlistContext = createContext();
 
@@ -35,8 +34,6 @@ export const WishlistProvider = ({ children }) => {
         const savedWishlist = localStorage.getItem('wishlist');
         return savedWishlist ? JSON.parse(savedWishlist) : [];
     });
-
-    const navigate = useNavigate();
 
     useEffect(() => {
         localStorage.setItem('wishlist', JSON.stringify(wishlist));

@@ -15,9 +15,6 @@ import {
     useTheme, // Import useTheme hook
 } from '@mui/material';
 import {
-    Speed,
-    Security,
-    LocalShipping,
     Support,
     People,
     Storefront,
@@ -249,7 +246,7 @@ const About = () => {
                             >
                                 <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
                                     <LightbulbOutlined sx={{ fontSize: '3rem', color: theme.palette.secondary.main, mr: 2 }} />
-                                    <Typography variant="h4" component="h3" sx={{color:  theme.palette.primary.main, mb: 4, fontWeight: 700  }}>
+                                    <Typography variant="h4" component="h3" sx={{ color: theme.palette.primary.main, mb: 4, fontWeight: 700 }}>
                                         Our Vision
                                     </Typography>
                                 </Box>
@@ -296,7 +293,7 @@ const About = () => {
 
                 {/* Team Section (now "About our Products") */}
                 <Box sx={{ mb: 6 }}>
-                    <Typography variant="h4" gutterBottom align="center" sx={{ color:  theme.palette.primary.main, mb: 4, fontWeight: 700  }}>
+                    <Typography variant="h4" gutterBottom align="center" sx={{ color: theme.palette.primary.main, mb: 4, fontWeight: 700 }}>
                         Explore Our Product Categories
                     </Typography>
                     <Grid container spacing={4} justifyContent="center"> {/* Centered grid */}
@@ -320,7 +317,7 @@ const About = () => {
                                                 objectFit: 'cover',
                                                 borderTopLeftRadius: '12px',
                                                 borderTopRightRadius: '12px',
-                                                color:'blue'
+                                                color: 'blue'
                                             }}
                                         />
                                         <CardContent sx={{ textAlign: 'center', background: theme.palette.background.paper, flexGrow: 1 }}>

@@ -5,12 +5,9 @@ import {
     Typography,
     Button,
     Box,
-    Rating,
     Chip,
     Divider,
     Paper,
-    Zoom,
-    Fade,
     IconButton
 } from '@mui/material';
 import {
@@ -20,13 +17,8 @@ import {
     VerifiedUser,
     AssignmentReturn,
     LocalOffer,
-    ArrowBack,
-    ArrowForward,
     FiberManualRecord,
-    ArrowUpward,
-    ArrowDownward,
     Fullscreen,
-    FullscreenExit,
     Close,
 } from '@mui/icons-material';
 import { useParams, useNavigate } from 'react-router-dom';
@@ -62,29 +54,6 @@ const productImages = {
     10: tablet2,
     11: camera1,
     12: camera2,
-};
-
-// Product views mapping
-const getProductViews = (productId, category) => {
-    // This is a sample implementation. In a real app, you would have actual different view images
-    const views = {
-        front: productImages[productId],
-        left: category === 'Laptops' ? laptop2 :
-            category === 'Phones' ? phone2 :
-                category === 'Watches' ? smartwatch2 :
-                    category === 'Headphones' ? headphones2 :
-                        category === 'Tablets' ? tablet2 :
-                            camera2,
-        right: category === 'Laptops' ? laptop1 :
-            category === 'Phones' ? phone1 :
-                category === 'Watches' ? smartwatch1 :
-                    category === 'Headphones' ? headphones1 :
-                        category === 'Tablets' ? tablet1 :
-                            camera1,
-        top: productImages[productId], // In real app, replace with actual top view
-        bottom: productImages[productId], // In real app, replace with actual bottom view
-    };
-    return views;
 };
 
 const ProductDetails = () => {

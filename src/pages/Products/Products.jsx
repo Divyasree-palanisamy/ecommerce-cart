@@ -493,6 +493,7 @@ const Products = () => {
                     elevation={6}
                     variant="filled"
                     className="success-alert"
+                    sx={{ color: '#1976d2', background: '#e3f2fd', fontWeight: 600 }}
                 >
                     {successMessage.message}
                 </Alert>
