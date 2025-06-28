@@ -26,7 +26,6 @@ import {
     LocationOn,
     AccessTime,
     Facebook,
-    Twitter,
     Instagram,
     LinkedIn,
     YouTube,

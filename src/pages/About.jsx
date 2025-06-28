@@ -15,7 +15,6 @@ import {
     useTheme, // Import useTheme hook
 } from '@mui/material';
 import {
-    Support,
     People,
     Storefront,
     ThumbUp,
@@ -33,9 +32,6 @@ import teamMember3 from '../assets/images/products/tablet1.jpeg';
 import teamMember4 from '../assets/images/products/camera1.jpeg';
 import teamMember5 from '../assets/images/products/smartwatch1.jpeg';
 import teamMember6 from '../assets/images/products/headphones1.jpeg';
-
-// Import background video
-import bgVideo from '../assets/videos/bg1q.jpeg';
 
 // Import hero video
 import heroVideo from '../assets/videos/hero-video.mp4';
