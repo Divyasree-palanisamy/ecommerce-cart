@@ -1,0 +1,31 @@
+{
+  "files": {
+    "main.css": "/static/css/main.6937a6eb.css",
+    "main.js": "/static/js/main.b14e83c9.js",
+    "static/media/bg.mp4": "/static/media/bg.119515df11f87ace2837.mp4",
+    "static/media/hero-video.mp4": "/static/media/hero-video.c6cf55c5893c93c07b3e.mp4",
+    "static/media/product3.jpeg": "/static/media/product3.5905a4eb37ae409687b1.jpeg",
+    "static/media/headphones1.jpeg": "/static/media/headphones1.edcfdbdd840b168da970.jpeg",
+    "static/media/phone1.jpeg": "/static/media/phone1.344126ffa04591624764.jpeg",
+    "static/media/smartwatch1.jpeg": "/static/media/smartwatch1.77453e206b31ba991fc9.jpeg",
+    "static/media/smartwatch2.jpeg": "/static/media/smartwatch2.5391bc492cc3567d4319.jpeg",
+    "static/media/tablet2.jpeg": "/static/media/tablet2.8bc349ea1d930543fbf1.jpeg",
+    "static/media/product2.jpg": "/static/media/product2.9b003843887bb989b14b.jpg",
+    "static/media/camera1.jpeg": "/static/media/camera1.68eaf45196a2c1cf2254.jpeg",
+    "static/media/camera2.jpeg": "/static/media/camera2.2a27cc4dd4df0ecd7618.jpeg",
+    "static/media/tablet1.jpeg": "/static/media/tablet1.0595726bb190bcd3eb75.jpeg",
+    "static/media/product1.avif": "/static/media/product1.3a58c108d30d8345312b.avif",
+    "static/media/laptop1.jpeg": "/static/media/laptop1.c477fbb75910ff0f22ec.jpeg",
+    "static/media/laptop2.jpeg": "/static/media/laptop2.3bc6b1b7981b45480283.jpeg",
+    "static/media/tv.jpg": "/static/media/tv.bef0f6df91d4c51ebb48.jpg",
+    "static/media/camera-kit.jpg": "/static/media/camera-kit.890eb6ab8d92ed3be998.jpg",
+    "static/media/gaming-keyboard.jpg": "/static/media/gaming-keyboard.c6ddb16ce59537456d8a.jpg",
+    "index.html": "/index.html",
+    "main.6937a6eb.css.map": "/static/css/main.6937a6eb.css.map",
+    "main.b14e83c9.js.map": "/static/js/main.b14e83c9.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6937a6eb.css",
+    "static/js/main.b14e83c9.js"
+  ]
+}
